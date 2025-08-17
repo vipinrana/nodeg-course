@@ -8,7 +8,8 @@ env:
   MONGO_DB_NAME: gha-demo
 jobs:
   test:
-    # environment: testing
+    # below is the environment created for different environment like dev, testing and prod
+    environment: testing
     env:
       MONGODB_CLUSTER_ADDRESS: cluster-demo.sltrsjm.mongodb.net
       MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
@@ -39,3 +40,4 @@ jobs:
         run: |
           echo "MONGODB_CLUSTER_ADDRESS ${{ env.MONGODB_CLUSTER_ADDRESS }} "
           echo "MONGODB_DB_NAME ${{ env.MONGO_DB_NAME }} "
+          echo "MONGODB_USERNAME ${{ secrets.MONGODB_PASSWORD }} "
